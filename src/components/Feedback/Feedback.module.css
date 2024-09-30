@@ -1,0 +1,11 @@
+.feedbackGood {
+    color: green;
+}
+
+.feedbackNeutral {
+    color: yellowgreen;
+}
+
+.feedbackBad {
+    color: red;
+}
