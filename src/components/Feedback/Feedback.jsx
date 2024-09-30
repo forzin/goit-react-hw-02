@@ -1,6 +1,6 @@
 import styles from './Feedback.module.css'
 
-const Feedback = ({ reviews, totalFeedback }) => {
+const Feedback = ({ reviews, totalFeedback, totalPercent }) => {
     return (
         <div>
             <ul className={styles.feedbackList}>
@@ -17,7 +17,7 @@ const Feedback = ({ reviews, totalFeedback }) => {
                     <p>Total: {totalFeedback}</p>
                 </li>
                 <li>
-                    <p>Positive: {Math.round((reviews.good / totalFeedback) * 100)}%</p>
+                    <p>Positive: {totalPercent}%</p>
                 </li>
             </ul>
         </div>

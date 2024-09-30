@@ -27,7 +27,7 @@ function App() {
   });
 
   const updateFeedback = feedbackType => {
-    setReviews({ ...reviews, [feedbackType]: reviews[feedbackType] + 1});
+    setReviews(prevReviews => ({ ...prevReviews, [feedbackType]: prevReviews[feedbackType] + 1}));
   }
 
   useEffect(() => {
@@ -43,6 +43,8 @@ function App() {
   }
 
   const totalFeedback = reviews.good + reviews.neutral + reviews.bad;
+
+  const totalPercent = Math.round((reviews.good / totalFeedback) * 100);
   
   return (
     <>
@@ -61,6 +63,7 @@ function App() {
           <Feedback 
             reviews={reviews} 
             totalFeedback={totalFeedback}
+            totalPercent={totalPercent}
           />
         ) : (
           <Notification />
